@@ -15,5 +15,6 @@
     <p><%= @backyard.description %></p>
     <p>Price: £<%= @backyard.price %></p>
     <p>Max Capacity: <%= @backyard.max_capacity %></p>
+    <%= link_to "Delete backyard", backyards_path, method: :delete %>
   </div>
 </div>
