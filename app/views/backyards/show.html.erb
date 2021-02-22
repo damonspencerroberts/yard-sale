@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="m-4 d-flex justify-content-center align-items-center">
+    <h1><%= @backyard.name %></h1>
+    <p><%= @backyard.address %></p>
+    <div class="row">
+      <% @backyard.photos.each do |photo| %>
+        <div class="col-lg-6">
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="m-4 d-flex justify-content-center align-items-center">
+    <h3>Description</h3>
+    <p><%= @backyard.description %></p>
+    <p>Price: £<%= @backyard.price %></p>
+    <p>Max Capacity: <%= @backyard.max_capacity %></p>
+  </div>
+</div>
