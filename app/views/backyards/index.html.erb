@@ -1,0 +1,6 @@
+<% @backyards.each do |backyard| %>
+	<h1><%= backyard.name%></h1>
+	<p><%= backyard.description%></p>
+	<p><%= backyard.address%></p>
+	<p><%= backyard.price%> - <%= backyard.max_capacity%></p>
+<% end %>
