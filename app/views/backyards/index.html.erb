@@ -1,6 +1,17 @@
-<% @backyards.each do |backyard| %>
-	<h1><%= backyard.name%></h1>
-	<p><%= backyard.description%></p>
-	<p><%= backyard.address%></p>
-	<p><%= backyard.price%> - <%= backyard.max_capacity%></p>
-<% end %>
+<div class="container">
+		<div class="cards">
+						<% @backyards.each do |backyard| %>
+						<%= link_to backyard_path(backyard) do%>
+						<div class="card-backyard">
+							<%= cl_image_tag backyard.photos.first.key, height: 300, width: 400, crop: :fill %>
+										<h2><%=backyard.name%></h2>
+										<p><%= backyard.description%></p>
+							<div class="card-backyard-infos">
+										<p><%= backyard.address%></p>
+										<p><%= backyard.price%> - <%= backyard.max_capacity%></p>
+							</div>
+						</div>
+										<% end %>
+						<% end %>
+		</div>
+</div>

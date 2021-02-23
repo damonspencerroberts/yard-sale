@@ -1,12 +1,16 @@
 .navbar-lewagon {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background: transparent;
   z-index: 10;
   transition: background 0.6s ease;
-  padding: 10px;
+  padding: 25px;
+  font-size: 1.4rem;
+
   .nav-link{
-    color: $pale-green !important;
+    color: $bright-green !important;
+    margin-right: 10px !important;
   }
 }
 
@@ -18,11 +22,16 @@
   width: 40px;
 }
 
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
 //for JS code
 .navbar-lewagon-white {
   background: $pale-green;
   box-shadow: 0px 2px 2px $pale-green-shaddow;
    .nav-link {
-     color: $brown !important;
+     color: $green !important;
    }
 }
