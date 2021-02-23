@@ -6,7 +6,7 @@ class BackyardsController < ApplicationController
   def show
     @backyard = Backyard.find(params[:id])
   end
-
+  
   def new
     @backyard = Backyard.new
   end
@@ -21,6 +21,7 @@ class BackyardsController < ApplicationController
     end
   end
 
+  private
   # must add photos below
   def backyard_params
     params.require(:backyard).permit(:name, :address, :price, :description, :max_capacity)
