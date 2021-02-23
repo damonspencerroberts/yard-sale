@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'open-uri'
+require 'date'
 
 def open_file(file)
   URI.open(file)
@@ -233,6 +234,7 @@ backyards = [
   }
 ]
 
+
 backyards.each_with_index do |backyard, index|
   new_backyard = Backyard.new(
     name: backyard[:name],
@@ -247,4 +249,16 @@ backyards.each_with_index do |backyard, index|
     new_backyard.photos.attach(io: opened_photo, filename: "backyard#{index}-#{j}.jpg", content_type: 'image/jpg')
   end
   new_backyard.save
+end
+
+puts "cleaning database"
+puts "creating bookings"
+
+10.times do
+  Booking.create!(
+    date: Date.today + rand(1..100),
+    number_of_guests: rand(10..30),
+    user_id: User.all.ids.sample,
+    backyard_id: Backyard.all.ids.sample
+    )
 end
