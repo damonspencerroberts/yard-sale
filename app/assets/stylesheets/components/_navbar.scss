@@ -7,8 +7,9 @@
   transition: background 0.6s ease;
   padding: 20px;
   font-size: 1.2rem;
+
   .nav-link{
-    color: $pale-green !important;
+    color: $bright-green !important;
   }
 }
 
@@ -30,6 +31,6 @@
   background: $pale-green;
   box-shadow: 0px 2px 2px $pale-green-shaddow;
    .nav-link {
-     color: $brown !important;
+     color: $green !important;
    }
 }
