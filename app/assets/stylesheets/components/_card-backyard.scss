@@ -3,6 +3,7 @@
   background: $pale-green;
    box-shadow: 0 0 15px $pale-green-shaddow;
    border-radius: 15px;
+   color: $brown;
 }
 
 .card-backyard > img {
@@ -16,6 +17,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  
 }
 
 .card-backyard p {
@@ -25,12 +27,11 @@
   margin: 0;
 }
 
-
 .card-backyard .card-backyard-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-decoration: none;
 }
-
