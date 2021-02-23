@@ -17,7 +17,7 @@ class BackyardsController < ApplicationController
     @backyard = Backyard.find(params[:id])
     if @backyard.user == current_user
       @backyard.destroy
-      redirect_to backyard_path(@backyard)
+      redirect_to backyards_path
     else
       flash.now[:notice] = "Only the owner can delete their yard!"
     end
