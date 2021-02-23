@@ -1,0 +1,8 @@
+<% @bookings.each do |booking|%>
+	<div class="card">
+	 	<p><%= booking.backyard.name %></p>
+	 	<p><%= booking.backyard.address %></p>
+	 	<p><%= booking.backyard.price %></p>
+		<p><%= booking.date %> - <%= booking.number_of_guests %></p>
+	</div>
+<% end %>
