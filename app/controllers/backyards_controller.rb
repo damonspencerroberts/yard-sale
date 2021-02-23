@@ -11,6 +11,16 @@ class BackyardsController < ApplicationController
     @backyard = Backyard.new
   end
 
+  def destroy
+    @backyard = Backyard.find(params[:id])
+    if @backyard.user == current_user
+      @backyard.destroy
+      redirect_to backyards_path
+    else
+      flash.now[:notice] = "Only the owner can delete their yard!"
+    end
+  end
+
   def create
     @backyard = Backyard.new(backyard_params)
     @backyard.user_id = current_user.id
