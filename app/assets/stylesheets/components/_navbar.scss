@@ -1,11 +1,13 @@
 .navbar-lewagon {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background: transparent;
   z-index: 10;
   transition: background 0.6s ease;
-  padding: 10px;
-  
+  padding: 20px;
+  font-size: 1.2rem;
+
   .nav-link{
     color: $bright-green !important;
   }
@@ -17,6 +19,11 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
 }
 
 //for JS code
