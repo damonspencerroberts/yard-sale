@@ -1,20 +1,49 @@
 <div class="container">
   <div class="m-4 d-flex justify-content-center align-items-center">
     <h1><%= @backyard.name %></h1>
-    <p><%= @backyard.address %></p>
-    <div class="row">
+      <div class="column">
       <% @backyard.photos.each do |photo| %>
-        <div class="col-lg-6">
+        <div class="col-lg-8">
           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         </div>
       <% end %>
+      <p><%= @backyard.address %></p>
     </div>
   </div>
   <div class="m-4 d-flex justify-content-center align-items-center">
     <h3>Description</h3>
+    <br>
     <p><%= @backyard.description %></p>
     <p>Price: £<%= @backyard.price %></p>
     <p>Max Capacity: <%= @backyard.max_capacity %></p>
   </div>
-</div>
+  
+  
+  <div class="card backyard">
+  <img src= @backyard.photo />
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    </div>
+  </div> 
 
+
+  <%# <div>
+   <img class="_6tbg2q" aria-hidden="true" alt="" id="FMP-target" 
+  
+   style="object-fit: cover; vertical-align: bottom;">
+  </div>
+  <div>
+    <img class="_6tbg2q" aria-hidden="true" alt="" 
+    src=
+    data-original-uri= 
+    style="object-fit: cover; vertical-align: bottom;">
+  </div>
+  <div>
+  <div style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; 
+  padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;">
+  
+ %>
