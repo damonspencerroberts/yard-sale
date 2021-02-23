@@ -18,12 +18,17 @@
               </li>
               <li class="nav-item dropdown">
                 <% if current_user %>
-                  <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <% if current_user.avatar.key %>
+                    <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <% else %>
+                    <%= image_tag "https://cdn.esquimaltmfrc.com/wp-content/uploads/2015/09/flat-faces-icons-circle-woman-7.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <% end %>
                 <% else %>
                   <%= image_tag "https://cdn.esquimaltmfrc.com/wp-content/uploads/2015/09/flat-faces-icons-circle-woman-7.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% end %>
                 <% if current_user %>
-                  <div class="dropdown-menu dropdown-menu-right small-box" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu dropdown-menu-right small-box p-3" aria-labelledby="navbarDropdown">
+                    <p class="text-info"><%= current_user.email %></p>
                     <%= link_to "Log Out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
                   </div>
                 <% else %>
