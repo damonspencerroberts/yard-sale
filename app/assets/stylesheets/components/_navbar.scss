@@ -1,6 +1,13 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  z-index: 10;
+  transition: background 0.6s ease;
+  padding: 10px;
+  .nav-link{
+    color: $pale-green !important;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +16,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+//for JS code
+.navbar-lewagon-white {
+  background: $pale-green;
+  box-shadow: 0px 2px 2px $pale-green-shaddow;
+   .nav-link {
+     color: $brown !important;
+   }
 }

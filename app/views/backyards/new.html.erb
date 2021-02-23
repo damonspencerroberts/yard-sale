@@ -1,0 +1,10 @@
+<div class="container">
+  <%= simple_form_for @backyard do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :max_capacity %>
+    <%= f.button :submit, class: "btn-primary btn" %>
+  <% end %>
+</div>
