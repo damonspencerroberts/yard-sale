@@ -17,7 +17,7 @@ class BackyardsController < ApplicationController
       @backyard.destroy
       redirect_to backyards_path
     else
-      flash.now[:notice] = "Only th owner can delete they're yard!"
+      flash.now[:notice] = "Only the owner can delete their yard!"
     end
   end
 
