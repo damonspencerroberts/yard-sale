@@ -1,0 +1,37 @@
+.card-backyard {
+  overflow: hidden;
+  background: $pale-green;
+   box-shadow: 0 0 15px $pale-green-shaddow;
+   border-radius: 15px;
+   color: $brown;
+}
+
+.card-backyard > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-backyard h2 {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  
+}
+
+.card-backyard p {
+  padding: 10px;
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-backyard .card-backyard-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  text-decoration: none;
+}
