@@ -13,7 +13,7 @@ class BackyardsController < ApplicationController
 
   def destroy
     @backyard = Backyard.find(params[:id])
-    if @backyard.user_id == current_user.id
+    if @backyard.user == current_user
       @backyard.destroy
       redirect_to backyards_path
     else
