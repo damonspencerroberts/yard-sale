@@ -1,4 +1,6 @@
 class BackyardsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+
   def index
     @backyards = Backyard.all
   end
@@ -6,7 +8,7 @@ class BackyardsController < ApplicationController
   def show
     @backyard = Backyard.find(params[:id])
   end
-  
+
   def new
     @backyard = Backyard.new
   end
@@ -15,7 +17,7 @@ class BackyardsController < ApplicationController
     @backyard = Backyard.find(params[:id])
     if @backyard.user == current_user
       @backyard.destroy
-      redirect_to backyards_path
+      redirect_to backyard_path(@backyard)
     else
       flash.now[:notice] = "Only the owner can delete their yard!"
     end
@@ -32,8 +34,8 @@ class BackyardsController < ApplicationController
   end
 
   private
-  # must add photos below
+
   def backyard_params
-    params.require(:backyard).permit(:name, :address, :price, :description, :max_capacity)
+    params.require(:backyard).permit(:name, :address, :price, :description, :max_capacity, photos: [])
   end
 end
