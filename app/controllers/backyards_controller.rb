@@ -1,12 +1,20 @@
 class BackyardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @backyards = Backyard.all
+    @markers = @backyards.geocoded.map do |backyard|
+      {
+        lat: backyard.latitude,
+        lng: backyard.longitude
+      }
+    end
   end
 
   def show
     @backyard = Backyard.find(params[:id])
   end
-  
+
   def new
     @backyard = Backyard.new
   end
@@ -32,8 +40,8 @@ class BackyardsController < ApplicationController
   end
 
   private
-  # must add photos below
+
   def backyard_params
-    params.require(:backyard).permit(:name, :address, :price, :description, :max_capacity)
+    params.require(:backyard).permit(:name, :address, :price, :description, :max_capacity, photos: [])
   end
 end

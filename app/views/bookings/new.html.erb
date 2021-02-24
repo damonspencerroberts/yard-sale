@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for [@backyard, @booking] do |f| %>
+    <%= f.input :date %>
+    <%= f.input :number_of_guests %>
+    <%= f.button :submit, class: "btn-primary btn" %>
+  <% end %>
+</div>
