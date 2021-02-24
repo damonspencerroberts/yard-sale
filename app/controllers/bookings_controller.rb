@@ -24,6 +24,16 @@ class BookingsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@booking = Booking.find(params[:id])
+		if @booking.user == current_user
+			@booking.destroy
+			redirect_to backyard_bookings_path
+		else
+			flash.now[:notice] = "Cannot delete this booking"
+		end
+	end
+
 	private
 
 	def booking_params
