@@ -3,6 +3,12 @@ class BackyardsController < ApplicationController
 
   def index
     @backyards = Backyard.all
+    @markers = @backyards.geocoded.map do |backyard|
+      {
+        lat: backyard.latitude,
+        lng: backyard.longitude
+      }
+    end
   end
 
   def show
