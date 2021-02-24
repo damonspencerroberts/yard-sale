@@ -1,4 +1,4 @@
-.new_user, .edit_user, .new_backyard, .edit_booking {
+.new_user, .edit_user, .new_backyard, .edit_booking, .new_booking {
   background: white;
   margin-top: 50px;
   border-radius: 3px;
@@ -26,6 +26,6 @@
   padding: 10px 20px;
 }
 
-.edit_booking {
+.edit_booking, .new_booking {
   padding: 10px 5px;
 }
