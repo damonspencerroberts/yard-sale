@@ -5,14 +5,12 @@
         <%= cl_image_tag photo.key, height: 400, width: 700, crop: :fill, class:"show-image" %>      
       <% end %>
     </div>
-    <div class="col-sm-4">  
-      <div class="backyard-description"> 
-        <p class="align-bottom">Address: <%= @backyard.address %></p>
-        <p>Price: <strong>£<%=@backyard.price %></strong></p>
-        <p>Max Capacity: <strong><%= @backyard.max_capacity %></strong></p>             
-    
-      </div>
-    </div>
+      <div class="col-sm-4 backyard-description">
+          <p class="align-bottom">Address: <%= @backyard.address %></p>
+          <p>Price: <strong>£<%=@backyard.price %></strong></p>
+          <p>Max Capacity: <strong><%= @backyard.max_capacity %></strong></p>
+      </div>       
+   </div>
   </div>
   <div class="row">
     <div class="col-sm-6">
