@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
 		@booking.backyard = @backyard
 		@booking.user = current_user
 		if @booking.save!
-			redirect_to backyard_bookings_path
+			redirect_to user_profile_bookings_path
 		else
 			render :new
 		end
