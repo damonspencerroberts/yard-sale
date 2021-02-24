@@ -9,6 +9,7 @@
           <p class="align-bottom">Address: <%= @backyard.address %></p>
           <p>Price: <strong>£<%=@backyard.price %></strong></p>
           <p>Max Capacity: <strong><%= @backyard.max_capacity %></strong></p>
+          <%= link_to 'Book now!', new_backyard_booking_path(@backyard) %>
       </div>       
    </div>
   </div>
