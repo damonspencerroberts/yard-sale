@@ -36,19 +36,28 @@
   text-decoration: none;
 }
 
-.card-backyard .description {
+.backyard-description {
   width: 100%;
   padding: 40px;
+  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  font-size: 28px;
-  // padding: 16px;
+  font-size: 20px;
+  // margin: 8px;
   // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-end;
-  // position: relative;
-  
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;  
   }
 
+  .card-backyard p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
   // .card-backyard .description {
   //   padding: 16px;
   //   display: flex;
@@ -56,3 +65,26 @@
   //   align-items: flex-end;
   //   position: relative;
  
+  .column {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+    position: relative;
+
+  }
+  .col-sm-6 {
+    margin-top: 45px;
+    padding: 20px;
+    padding-top: 25px;
+
+  }
+
+  .show-image {
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+
+  .align-bottom {
+    text-align: left;
+
+  }
