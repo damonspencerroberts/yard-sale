@@ -8,5 +8,7 @@ class PagesController < ApplicationController
   end
 
   def profilebookings
+    @bookings = Booking.where('user_id = ?', current_user.id)
+    @backyards = @bookings.map { |booking| Backyard.find(booking.backyard_id) }
   end
 end
