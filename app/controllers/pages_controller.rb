@@ -11,4 +11,8 @@ class PagesController < ApplicationController
     @bookings = Booking.where('user_id = ?', current_user.id)
     @backyards = @bookings.map { |booking| Backyard.find(booking.backyard_id) }
   end
+
+  def profilebackyards
+    @backyards = Backyard.where('id = ?', current_user.id)
+  end
 end
