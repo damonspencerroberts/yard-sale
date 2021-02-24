@@ -3,4 +3,5 @@
 	<p><%= @booking.backyard.address %></p>
 	 <p><%= @booking.backyard.price %></p>
 	<p><%= @booking.date %> - <%= @booking.number_of_guests %></p>
+	<%= link_to "delete", booking_path(@booking), method: :delete, data: {confirm: "Are you sure?"} %>
 </div>
