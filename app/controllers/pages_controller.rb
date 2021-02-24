@@ -13,6 +13,6 @@ class PagesController < ApplicationController
   end
 
   def profilebackyards
-    @backyards = Backyard.where('id = ?', current_user.id)
+    @backyards = Backyard.where('user_id = ?', current_user.id)
   end
 end
