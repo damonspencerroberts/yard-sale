@@ -1,10 +1,17 @@
 .card-backyard {
+  position: relative;
   overflow: hidden;
   background: $pale-green;
   height: 340px;
   box-shadow: 0 0 15px $pale-green-shaddow;
   border-radius: 15px;
   color: $brown;
+  transition: transform 0.4s;
+}
+
+.card-backyard:hover {
+  transform: scale(1.03);
+  opacity: 0.8;
 }
 
 .card-backyard>img {
@@ -32,7 +39,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
   text-decoration: none;
 }
 
@@ -93,5 +99,12 @@
 
 .align-bottom {
   text-align: left;
+}
 
+.card-backyard-icons {
+  position: absolute;
+  display: flex;
+  bottom: 5px;
+  right: 5px;
+  font-size: 1.2rem;
 }

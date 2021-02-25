@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container page-container">
   <%= render partial: "profile-header" %>
   <div>
     <ul class="list-inline tabs-underlined">
@@ -63,13 +63,13 @@
               <% end %>
               <div>
                 <div>
-                  <p>Date: <%= booking.date %></p>
+                  <p><i class="fas fa-calendar-alt"></i> <%= booking.date.strftime('%a %b %e, %y') %></p>
                 </div>
                 <div>
-                  <p>Guests: <%= booking.number_of_guests %></p>
+                  <p><i class="fas fa-user-friends"></i> <%= booking.number_of_guests %></p>
                 </div>
                 <div>
-                  <p>Cost: £<%= @backyards[index].price %></p>
+                  <p><i class="fas fa-money-bill-wave"></i> £<%= @backyards[index].price %></p>
                 </div>
               </div>
             </div>

@@ -1,27 +1,36 @@
-<h1 class="text-center" style="margin-top: 90px;">Available Backyards</h1>
-<div class="content">
-  <div class="cards">
-	<% if @backyards.empty? %>
-	<p class=col-12>There are no backyards to display</p>
-	<%= link_to "back", backyards_path  %>
-	<%else%>
-    <% @backyards.each do |backyard| %>
-		<%= link_to backyard_path(backyard) do%>
-			<div class="card-backyard">
-				<%= cl_image_tag backyard.photos.first.key, height: 600, width: 600, crop: :fill %>
-					<h2><%=backyard.name%></h2>
-				<div class="card-backyard-infos">
-					<p><i class="fas fa-pound-sign"></i> <%= backyard.price%> - <%= backyard.max_capacity%> <i class="fas fa-user-friends"></i></p>
+<div class="page-container">
+	<h1 class="text-center">Available Backyards</h1>
+	<div class="content">
+		<div class="cards">
+		<% if @backyards.empty? %>
+			<p class="col-12 text-danger">There are no backyards to display</p>
+			<%= link_to "back", backyards_path  %>
+		<%else%>
+			<% @backyards.each do |backyard| %>
+			<%= link_to backyard_path(backyard) do%>
+				<div class="card-backyard">
+					<%= cl_image_tag backyard.photos.first.key, height: 600, width: 600, crop: :fill %>
+						<h2><%=backyard.name%></h2>
+					<div class="card-backyard-infos">
+						<div class="card-backyard-icons">
+							<div class="m-2">
+								<i class="fas fa-pound-sign"></i> <%= backyard.price%>
+							</div>
+							<div class="m-2">
+								<i class="fas fa-user-friends"></i> <%= backyard.max_capacity%>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-				<% end %>
+					<% end %>
+			<% end %>
 		<% end %>
-	<% end %>
-  </div>
-<!--rendering the map-->
-		<div id="map"
-			style="width: 100%; height: 100vh;"
-			data-markers="<%= @markers.to_json %>"
-			data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 		</div>
+	<!--rendering the map-->
+			<div id="map"
+				style="width: 100%; height: 100vh;"
+				data-markers="<%= @markers.to_json %>"
+				data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+			</div>
+	</div>
 </div>
