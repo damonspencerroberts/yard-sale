@@ -17,6 +17,7 @@ class PagesController < ApplicationController
   end
 
   def profileconfirmation
-    @backyards = Backyard.where('confi')
-  end
+    @backyards = Backyard.where('user_id = ?', current_user.id)
+    @pending_bookings = @backyards.map { |yard| Booking.where('backyard_id = ?', yard.id) }.flatten
+  end 
 end
