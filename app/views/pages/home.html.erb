@@ -1,8 +1,6 @@
-    <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1598497917893-1e277163425f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
-        <div class="title">        
-              <h1>Yardsail</h1>
-              <h3 class="subtitle">Your best online marketplace for other people's backyards</h3>
-        </div>       
+    <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1598497917893-1e277163425f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">        
+        <h1>Yardsail</h1>
+        <h3 class="subtitle">Your best online marketplace for other people's backyards</h3>    
          <%= form_tag(backyards_path, method: :get, class:"searchbar home-search") do%>
                     <%= text_field_tag :query,
                       params[:query],
@@ -17,11 +15,17 @@
 
     <div class="text">
       <h3 class="text-center mt-5">Featured</h3>
-        <div class="content">
-          <div class="cards">
-              <div class="card-backyard">
-                <div class="card-backyard-infos">
-                </div>
-              </div>
-  </div>
     </div>
+          <div class="home-card-container">
+              <% @backyards.each do |backyard| %>
+                <%= link_to backyard_path(backyard) do%>
+                  <div class="card-background-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path backyard.photos.first.key, height: 600, width: 600, crop: :fill%>')">
+                      <h2><%=backyard.name%></h2>
+                      <p><i class="fas fa-pound-sign"></i> <%= backyard.price%> - <%= backyard.max_capacity%> <i class="fas fa-user-friends"></i></p>
+                  </div>
+              <% end %>
+          <% end %>
+          </div>
+      </div>
+    </div>
+</div>
