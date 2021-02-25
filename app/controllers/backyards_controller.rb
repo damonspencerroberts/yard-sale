@@ -9,6 +9,12 @@ class BackyardsController < ApplicationController
         lng: backyard.longitude
       }
     end
+
+    if params[:query]
+
+    else
+      
+    end
   end
 
   def show
