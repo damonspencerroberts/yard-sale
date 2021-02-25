@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center my-2 p-3">
+    <div class="col-12 col-sm-offset-4">
+      <%= simple_form_for [@backyard, @review] do |f| %>
+        <h2>Edit your review</h2>
+        <%= f.input :content %>
+        <%= f.input :rating %>
+        <%= f.button :submit, class: "btn-success btn w-100" %>
+      <% end %>
+    </div>
+  </div>
+</div>

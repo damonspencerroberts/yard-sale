@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 	skip_before_action :authenticate_user!, only: :home
+  
   def home
+    @bookings = Booking.all
   end
 
   def profile
@@ -14,5 +16,14 @@ class PagesController < ApplicationController
 
   def profilebackyards
     @backyards = Backyard.where('user_id = ?', current_user.id)
+  end
+
+  def profileconfirmation
+    @backyards = Backyard.where('user_id = ?', current_user.id)
+    @pending_bookings = @backyards.map { |y| Booking.where('backyard_id = ?', y.id).where(confirmed: nil) }.flatten
+  end
+
+  def profilereviews
+    @reviews = Review.where(user_id: current_user)
   end
 end

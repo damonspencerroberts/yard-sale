@@ -3,6 +3,11 @@ class BackyardsController < ApplicationController
 
   def index
     @backyards = Backyard.all
+    
+    if params[:query] && params[:query].length > 0
+      @backyards = Backyard.search(params[:query])
+    end
+    
     @markers = @backyards.geocoded.map do |backyard|
       {
         lat: backyard.latitude,
@@ -12,6 +17,8 @@ class BackyardsController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @reviews = Review.where("backyard_id = ?", params[:id])
     @backyard = Backyard.find(params[:id])
     @booking = Booking.new
   end
@@ -34,7 +41,7 @@ class BackyardsController < ApplicationController
     @backyard = Backyard.new(backyard_params)
     @backyard.user_id = current_user.id
     if @backyard.save
-      redirect_to backyard_path(@backyard)
+      redirect_to user_profile_backyards_path
     else
       render :new
     end

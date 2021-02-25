@@ -1,7 +1,7 @@
 .card-backyard {
   overflow: hidden;
   background: $pale-green;
-  height: 450px;
+  height: 340px;
    box-shadow: 0 0 15px $pale-green-shaddow;
    border-radius: 15px;
    color: $brown;
@@ -29,7 +29,6 @@
 }
 
 .card-backyard .card-backyard-infos {
-  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -56,7 +55,6 @@
 
   .garden-description {
     margin-top:30px;
-
   }
 
 
