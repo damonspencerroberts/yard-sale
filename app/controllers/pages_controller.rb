@@ -15,4 +15,8 @@ class PagesController < ApplicationController
   def profilebackyards
     @backyards = Backyard.where('user_id = ?', current_user.id)
   end
+
+  def profileconfirmation
+    @backyards = Backyard.where('confi')
+  end
 end
