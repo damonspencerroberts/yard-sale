@@ -31,8 +31,8 @@
       <h2>Add review</h2>
       <%= simple_form_for [@backyard, @review] do |f| %>
         <%= f.input :content %>
-        <%= f.input :rating, collection: 0..5 %>
-        <%= f.submit %>
+          <%= f.input :rating, collection: (1..5).to_a , label: "Rate your experience"%>
+        <%= f.submit "Add your review"%>
       <% end %>
     </div>
   </div>
