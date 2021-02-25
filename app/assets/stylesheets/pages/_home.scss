@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.subtitle{
+  padding: 20px;
+  font-weight: lighter;
+  text-shadow: 0px 1px 1px $pale-green-shaddow;
+}
+
+.home-search{
+  position: relative;
+  align-self: center;
+  height: 4em;
+  width: 35em;
+  background-color: $magnolia;
+  opacity: 0.6;
+}

@@ -1,6 +1,5 @@
 const initNavbarScroll = () => {
   const navbar = document.querySelector('.navbar-lewagon');
-  console.log(navbar);
 
   if (navbar) {
     window.addEventListener('scroll', () => {
@@ -10,6 +9,11 @@ const initNavbarScroll = () => {
           navbar.classList.remove('navbar-lewagon-white');
       }
     })
+    if(window.location.pathname === '/')
+    {
+      const searchbar = document.querySelector(".searchbar");
+      searchbar.classList.add("d-none");
+    }
   }
 }
 
