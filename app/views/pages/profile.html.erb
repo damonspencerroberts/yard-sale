@@ -19,10 +19,14 @@
       </li>
     </ul>
   </div>
-  <div>
-    <div class = "border shadow-sm rounded p-3 my-5">
-      <p>Email: <%= current_user.email %></p>
-      <%= link_to "Edit Profile", edit_user_registration_path %>
+  <div class = "row">
+    <div class="col-lg-6">
+      <div class = "edit_booking p-2">
+        <p>Email: <%= current_user.email %></p>
+        <%= link_to "Edit Profile", edit_user_registration_path %>
+      </div>
+    </div>
+    <div class="col-lg-6">
       <%= simple_form_for current_user do |f| %>
         <%= f.input :avatar, as: :file %>
         <%= f.button :submit, class: "btn-success btn w-25" %>
