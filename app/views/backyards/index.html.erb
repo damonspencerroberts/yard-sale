@@ -1,18 +1,17 @@
-<h1 class="text-center mt-5">Available Backyards</h1>
+<h1 class="text-center" style="margin-top: 90px;">Available Backyards</h1>
 <div class="content">
   <div class="cards">
 	<% if @backyards.empty? %>
 	<p class=col-12>There are no backyards to display</p>
+	<%= link_to "back", backyards_path  %>
 	<%else%>
     <% @backyards.each do |backyard| %>
 		<%= link_to backyard_path(backyard) do%>
 			<div class="card-backyard">
-				<%= cl_image_tag backyard.photos.first.key, height: 300, width: 400, crop: :fill %>
+				<%= cl_image_tag backyard.photos.first.key, height: 600, width: 600, crop: :fill %>
 					<h2><%=backyard.name%></h2>
-					<p><%= backyard.description%></p>
 				<div class="card-backyard-infos">
-					<p><%= backyard.address%></p>
-					<p><i class="fas fa-pound-sign"></i> <%= backyard.price%> - <%= backyard.max_capacity%></p>
+					<p><i class="fas fa-pound-sign"></i> <%= backyard.price%> - <%= backyard.max_capacity%> <i class="fas fa-user-friends"></i></p>
 				</div>
 			</div>
 				<% end %>

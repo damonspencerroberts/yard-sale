@@ -8,8 +8,10 @@
                       params[:query],
                       class: "form-control field",
                       placeholder: "Find a backyard"
-                    %>
-                    <%= submit_tag "Search", class: "btn btn-primary button" %>
+                    %>                    
+                      <%= button_tag(type: "submit", class: "btn button", data: { disable_with: " Searching...".html_safe}) do%>
+                      <i class="fas fa-search"></i>
+                      <%end%>
               <% end %>
           </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
