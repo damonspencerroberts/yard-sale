@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :backyards do
   	resources :reviews, only: [:create, :edit, :update, :destroy]
-  	resources :bookings	
+  	resources :bookings
   end
   get '/users', to: 'pages#profile', as: 'user_profile'
   get '/users/backyards', to: 'pages#profilebackyards', as: 'user_profile_backyards'
