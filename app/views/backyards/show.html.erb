@@ -4,22 +4,29 @@
       <% @backyard.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 400, width: 700, crop: :fill, class:"show-image" %>      
       <% end %>
+      <div class="garden-description">
+        <h3><%= @backyard.name %></h3>
+        <p><%= @backyard.description %></p>
+      </div>
     </div>
-      <div class="col-sm-4 backyard-description">
+      <div class="col-sm-4 backyard-description h-100">
+        <div>
           <p class="align-bottom">Address: <%= @backyard.address %></p>
           <p>Price: <strong>£<%=@backyard.price %></strong></p>
           <p>Max Capacity: <strong><%= @backyard.max_capacity %></strong></p>
-          <%= link_to 'Book now!', new_backyard_booking_path(@backyard) %>
-      </div>       
-   </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <h3><%= @backyard.name %></h3>
-      <p><%= @backyard.description %></p>
-    </div>   
+        </div>
+          <div>
+            <%= simple_form_for [@backyard, @booking] do |f| %>
+              <h2>Create a booking</h2>
+              <%= f.input :date, as: :date, html5: true %>
+              <%= f.input :number_of_guests, collection: 1..@backyard.max_capacity %>
+              <%= f.button :submit, class: "btn-success btn w-100" %>
+            <% end %>
+          </div>
+      </div>
   </div>
 </div>
+
 
 <% @reviews.each do |review| %>
   <%= review.content %>
