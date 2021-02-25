@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get '/users/bookings', to: 'pages#profilebookings', as: 'user_profile_bookings'
   get '/users/confirmation', to: 'pages#profileconfirmation', as: 'user_profile_confirmation'
   get '/users/reviews', to: 'pages#profilereviews', as: 'user_profile_reviews'
+  resources :users, only: [:update]
 end

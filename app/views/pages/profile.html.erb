@@ -23,6 +23,10 @@
     <div class = "border shadow-sm rounded p-3 my-5">
       <p>Email: <%= current_user.email %></p>
       <%= link_to "Edit Profile", edit_user_registration_path %>
+      <%= simple_form_for current_user do |f| %>
+        <%= f.input :avatar, as: :file %>
+        <%= f.button :submit, class: "btn-success btn w-25" %>
+      <% end %>
     </div>
   </div>
 </div>
