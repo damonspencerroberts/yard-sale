@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container page-container">
   <%= render partial: "profile-header" %>
   <div>
     <ul class="list-inline tabs-underlined">
@@ -43,8 +43,8 @@
             <p><%= backyard.description %></p>
           </div>
           <div class="p-4">
-            <p>Price: £<%= backyard.price %></p>
-            <p>Max Capacity: <%= backyard.max_capacity %></p>
+            <p><i class="fas fa-money-bill-wave"></i> £<%= backyard.price %></p>
+            <p><i class="fas fa-user-friends"></i> <%= backyard.max_capacity %></p>
           </div>
           <div class="d-flex flex-column p-4">
             <%= link_to "View", backyard_path(backyard), class: "text-success" %>

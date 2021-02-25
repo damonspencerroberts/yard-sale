@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container page-container">
   <%= render partial: "profile-header" %>
   <div>
     <ul class="list-inline tabs-underlined">
@@ -22,8 +22,8 @@
   <div class = "row">
     <div class="col-lg-6">
       <div class = "edit_booking p-2">
-        <p>Email: <%= current_user.email %></p>
-        <%= link_to "Edit Profile", edit_user_registration_path %>
+        <p><i class="fas fa-envelope"></i> <%= current_user.email %></p>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-success w-25" %>
       </div>
     </div>
     <div class="col-lg-6">
