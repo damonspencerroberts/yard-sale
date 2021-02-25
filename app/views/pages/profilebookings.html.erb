@@ -43,8 +43,8 @@
               <h2><%= @backyards[index].name %></h2>
               <p><%= @backyards[index].description %></p>
               <div class="d-flex flex-column py-2">
-                <%= link_to "Edit Booking", edit_backyard_booking_path(@backyards[index], booking) %>
-                <%= link_to "Delete Booking", backyard_booking_path(@backyards[index], booking), method: :delete, data: { confirm: 'Are you sure?'} %>
+                <%= link_to "Edit Booking", edit_backyard_booking_path(@backyards[index], booking), class: "text-warning" %>
+                <%= link_to "Delete Booking", backyard_booking_path(@backyards[index], booking), method: :delete, data: { confirm: 'Are you sure?'}, class: "text-danger" %>
               </div>
             </div>
             <div class="p-4">
