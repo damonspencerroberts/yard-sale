@@ -13,6 +13,7 @@ class BackyardsController < ApplicationController
 
   def show
     @backyard = Backyard.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
