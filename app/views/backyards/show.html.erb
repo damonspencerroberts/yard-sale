@@ -4,20 +4,94 @@
       <% @backyard.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 400, width: 700, crop: :fill, class:"show-image" %>      
       <% end %>
+      <div class="garden-description">
+        <h3><%= @backyard.name %></h3>
+        <p><%= @backyard.description %></p>
+      </div>
     </div>
       <div class="col-sm-4 backyard-description">
+        <div>
           <p class="align-bottom">Address: <%= @backyard.address %></p>
           <p>Price: <strong>£<%=@backyard.price %></strong></p>
           <p>Max Capacity: <strong><%= @backyard.max_capacity %></strong></p>
-          <%= link_to 'Book now!', new_backyard_booking_path(@backyard) %>
-      </div>       
-   </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <h3><%= @backyard.name %></h3>
-      <p><%= @backyard.description %></p>
-    </div>   
+        </div>
+            <%# <div class="container"> %>
+              <%# <div class="row justify-content-center my-2 p-3"> %>
+                <div class="col-12 col-sm-offset-4">
+                   <form class="simple_form new_booking" id="new_booking" novalidate="novalidate" 
+                     action="/backyards/2/bookings" accept-charset="UTF-8" method="post">
+                     <input type="hidden" name="authenticity_token" value="PXLHmYBkt1_u6Kr_qu30IqTmbf-ZMtzU96brhh_AagIWt35E_lW-rRBJGtV00xj_z4IBLeRHWk9DdvWhb2ZuYw">
+                      <h2>Create a booking</h2>
+                        <div class="form-group date required booking_date"><label class="date required" for="booking_date_1i">Date <abbr title="required">*</abbr></label>
+                          <div class="d-flex flex-row justify-content-between align-items-center"><select id="booking_date_1i" name="booking[date(1i)]" class="form-control mx-1 date required">
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021" selected="selected">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            </select>
+                            <select id="booking_date_2i" name="booking[date(2i)]" class="form-control mx-1 date required">
+                            <option value="1">January</option>
+                            <option value="2" selected="selected">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                            </select>
+                            <select id="booking_date_3i" name="booking[date(3i)]" class="form-control mx-1 date required">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25" selected="selected">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            </select>
+                          </div>
+                        </div>
+                          <div class="form-group integer required booking_number_of_guests"><label class="integer required" for="booking_number_of_guests">Number of guests <abbr title="required">*</abbr></label><input class="form-control numeric integer required" type="number" step="1" name="booking[number_of_guests]" id="booking_number_of_guests"></div>
+                          <input type="submit" name="commit" value="Create Booking" class="btn btn-success btn w-100" data-disable-with="Create Booking">
+                    </form>  
+                </div>        
+          <%# </div> 
+      </div> %>
   </div>
 </div>
+
   
