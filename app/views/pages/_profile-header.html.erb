@@ -2,5 +2,9 @@
   <div class="profile-header">
     <h2 class="text-info">Welcome, <%= current_user.email %></h2>
   </div>
-  <%= cl_image_tag current_user.avatar.key, class: "avatar-profile" %>
+  <% if current_user.avatar.key.nil? %>
+    <%= image_tag "https://cdn.esquimaltmfrc.com/wp-content/uploads/2015/09/flat-faces-icons-circle-woman-7.png", class: "avatar-profile" %>
+  <% else %>
+    <%= cl_image_tag current_user.avatar.key, class: "avatar-profile" %>
+  <% end %>
 </div>
