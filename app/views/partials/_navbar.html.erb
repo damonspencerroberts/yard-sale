@@ -2,6 +2,18 @@
           <%= link_to root_path, class: "navbar-brand" do %>
               <%= image_tag "https://banner2.cleanpng.com/20180602/wfj/kisspng-gardening-logo-landscaping-landscape-green-5b12f26304aaf0.4171631015279683550191.jpg" %>
           <%end%>
+          <div>          
+              <%= form_tag(backyards_path, method: :get, class:"searchbar") do%>
+                    <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control field",
+                      placeholder: "Find a backyard"
+                    %>                    
+                      <%= button_tag(type: "submit", class: "btn button", data: { disable_with: " Searching...".html_safe}) do%>
+                      <i class="fas fa-search"></i>
+                      <%end%>
+              <% end %>
+          </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
