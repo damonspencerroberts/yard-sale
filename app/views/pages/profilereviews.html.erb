@@ -12,10 +12,10 @@
         <%= link_to "Listed backyards", user_profile_backyards_path, class: "tab-underlined" %>
       </li>
       <li>
-        <%= link_to "Booking Confirmations", user_profile_confirmation_path, class: "tab-underlined" %>
+        <%= link_to "Confirm bookings", user_profile_confirmation_path, class: "tab-underlined" %>
       </li>
       <li>
-        <%= link_to "Posted Reviews", user_profile_reviews_path, class: "tab-underlined active" %>
+        <%= link_to "Posted reviews", user_profile_reviews_path, class: "tab-underlined active" %>
       </li>
     </ul>
   </div>
@@ -51,6 +51,10 @@
               </p>
             <% end %>
             <p>Description: <%= review.content %></p>
+          </div>
+          <div class="d-flex flex-column p-3">
+            <%= link_to "Edit", edit_backyard_review_path(review.backyard, review), class: "text-warning" %>
+            <%= link_to "Delete", backyard_review_path(review.backyard, review), method: :delete, class: "text-danger", data: { confirm: "Are you sure?"} %>
           </div>
         </div>
       <% end %>
