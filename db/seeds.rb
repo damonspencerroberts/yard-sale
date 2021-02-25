@@ -256,6 +256,7 @@ end
 puts "cleaning database"
 puts "creating bookings"
 
+
 15.times do
   user = User.all.sample
   backyard = Backyard.all.sample
