@@ -262,5 +262,5 @@ puts "creating bookings"
     number_of_guests: rand(10..30),
     user_id: User.all.ids.sample,
     backyard: Backyard.all.sample
-    )
+  )
 end
