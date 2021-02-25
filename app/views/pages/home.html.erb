@@ -1,17 +1,17 @@
-    <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1598497917893-1e277163425f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">        
-        <h1>Yardsail</h1>
-        <h3 class="subtitle">Your best online marketplace for other people's backyards</h3>    
-         <%= form_tag(backyards_path, method: :get, class:"searchbar home-search") do%>
-                    <%= text_field_tag :query,
-                      params[:query],
-                      class: "form-control field",
-                      placeholder: "Find a backyard"
-                    %>                    
-                      <%= button_tag(type: "submit", class: "btn button", data: { disable_with: " Searching...".html_safe}) do%>
-                      <i class="fas fa-search"></i>
-                      <%end%>
-              <% end %>
-    </div>
+  <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1598497917893-1e277163425f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">        
+    <h1>Yardsail</h1>
+      <h3 class="subtitle">Your best online marketplace for other people's backyards</h3>    
+        <%= form_tag(backyards_path, method: :get, class:"searchbar home-search") do%>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control field",
+            placeholder: "Find a backyard"
+            %>                    
+            <%= button_tag(type: "submit", class: "btn button", data: { disable_with: " Searching...".html_safe}) do%>
+            <i class="fas fa-search"></i>
+          <%end%>
+        <% end %>
+      </div>
 
     <div class="text">
       <h3 class="text-center mt-5">Featured</h3>

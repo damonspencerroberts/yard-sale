@@ -1,0 +1,59 @@
+<div class="container">
+  <%= render partial: "profile-header" %>
+  <div>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "Profile", user_profile_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "My bookings", user_profile_bookings_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Listed backyards", user_profile_backyards_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Booking Confirmations", user_profile_confirmation_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Posted Reviews", user_profile_reviews_path, class: "tab-underlined active" %>
+      </li>
+    </ul>
+  </div>
+  <div class="d-flex justify-content-center align-items-center p-4">
+    <h3>Your posted reviews</h3>
+  </div>
+  <div class="my-5">
+    <% if @reviews.empty? %>
+      <div class="d-flex flex-column justify-content-center align-items-center p-1">
+        <div class="py-2">
+          <p class="text-danger">
+            Currently no reviews posted!
+          </p>
+        </div>
+      </div>
+    <% else %>
+      <% @reviews.each do |review| %>
+        <div class="card-product">
+          <div class="card-product-infos p-3">
+            <h2><%= review.backyard.name %></h2>
+            <p class ="text-info"><%= review.backyard.address %></p>
+            <% if review.rating < 3 %>
+              <p>Rating: 
+                <% review.rating.times do %>
+                  <i class="fas fa-star text-danger"></i>
+                <% end %>
+              </p>
+            <% else %>
+              <p>Rating: 
+                <% review.rating.times do %>
+                  <i class="fas fa-star text-success"></i>
+                <% end %>
+              </p>
+            <% end %>
+            <p>Description: <%= review.content %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

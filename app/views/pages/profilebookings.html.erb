@@ -6,10 +6,16 @@
         <%= link_to "Profile", user_profile_path, class: "tab-underlined" %>
       </li>
       <li>
-        <%= link_to "Bookings", user_profile_bookings_path, class: "tab-underlined active" %>
+        <%= link_to "My bookings", user_profile_bookings_path, class: "tab-underlined active" %>
       </li>
       <li>
-        <%= link_to "Backyards", user_profile_backyards_path, class: "tab-underlined" %>
+        <%= link_to "Listed backyards", user_profile_backyards_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Booking Confirmations", user_profile_confirmation_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Posted Reviews", user_profile_reviews_path, class: "tab-underlined" %>
       </li>
     </ul>
   </div>
@@ -37,14 +43,18 @@
               <h2><%= @backyards[index].name %></h2>
               <p><%= @backyards[index].description %></p>
               <div class="d-flex flex-column py-2">
-                <%= link_to "Edit Booking", edit_backyard_booking_path(@backyards[index], booking) %>
-                <%= link_to "Delete Booking", backyard_booking_path(@backyards[index], booking), method: :delete, data: { confirm: 'Are you sure?'} %>
+                <%= link_to "Edit Booking", edit_backyard_booking_path(@backyards[index], booking), class: "text-warning" %>
+                <%= link_to "Delete Booking", backyard_booking_path(@backyards[index], booking), method: :delete, data: { confirm: 'Are you sure?'}, class: "text-danger" %>
               </div>
             </div>
             <div class="p-4">
               <% if booking.confirmed %>
                 <div class = "confirmed">
                   <span>Confirmed</span>
+                </div>
+              <% elsif booking.confirmed == false %>
+                <div class = "declined">
+                  <span>Declined</span>
                 </div>
               <% else %>
                 <div class = "pending">
