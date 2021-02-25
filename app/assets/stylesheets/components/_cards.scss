@@ -3,6 +3,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
+  a {
+    text-decoration: none;
+  }
 }
 
 // Smallest device
