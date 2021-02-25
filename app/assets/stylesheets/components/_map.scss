@@ -1,0 +1,25 @@
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  margin-left: 16px;
+  border-radius: 15px;
+}
+
+@media (min-width: 576px) {
+	#map {
+    display: none;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+ #map {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+	#map {
+    display: block;
+  }
+}

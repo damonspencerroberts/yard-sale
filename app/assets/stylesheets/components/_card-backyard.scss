@@ -1,6 +1,7 @@
 .card-backyard {
   overflow: hidden;
   background: $pale-green;
+  height: 340px;
    box-shadow: 0 0 15px $pale-green-shaddow;
    border-radius: 15px;
    color: $brown;
@@ -28,7 +29,6 @@
 }
 
 .card-backyard .card-backyard-infos {
-  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -38,7 +38,7 @@
 
 .backyard-description {
   width: 100%;
-  padding: 40px;
+  padding: 25px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   font-size: 20px;
@@ -46,9 +46,15 @@
   // display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: absolute;
-  bottom: 0;
-  left: 0;  
+  // position: relative;
+  position: sticky !important;
+  top: 100px;
+  // bottom: 0;
+  // left: 0;  
+  }
+
+  .garden-description {
+    margin-top:30px;
   }
 
   .card-backyard p {
@@ -69,7 +75,7 @@
     height: 100%;
     width: 120px;
     object-fit: cover;
-    position: relative;
+    // position: relative;
 
   }
   .col-sm-6 {

@@ -1,0 +1,28 @@
+<div class="container">
+  <%= render partial: "profile-header" %>
+  <div>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <%= link_to "Profile", user_profile_path, class: "tab-underlined active" %>
+      </li>
+      <li>
+        <%= link_to "My bookings", user_profile_bookings_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Listed backyards", user_profile_backyards_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Booking Confirmations", user_profile_confirmation_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Posted Reviews", user_profile_reviews_path, class: "tab-underlined" %>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div class = "border shadow-sm rounded p-3 my-5">
+      <p>Email: <%= current_user.email %></p>
+      <%= link_to "Edit Profile", edit_user_registration_path %>
+    </div>
+  </div>
+</div>

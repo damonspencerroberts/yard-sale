@@ -14,6 +14,8 @@ def open_file(file)
 end
 # create 2 users 
 # seller
+puts "Clearing backyard..."
+Backyard.destroy_all
 puts "Clearing users..."
 User.destroy_all
 
@@ -59,9 +61,9 @@ end
 
 # backyards
 puts "Cleaning database..."
-Backyard.destroy_all
 
-puts "Creating backyard..."
+
+
 
 backyards = [
   {
@@ -70,7 +72,7 @@ backyards = [
     price: 60,
     description: "Beautiful garden perfect for a family picnic or a couple on a date. Would definitely suggest for people that love the outdoors.",
     max_capacity: 4,
-    user_id: 1,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1557429287-b2e26467fc2b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
     ]
@@ -81,7 +83,7 @@ backyards = [
     price: 30,
     description: "Great small garden perfect for a barbecue. My husband and I love summer days eating ouside and hope you do too.",
     max_capacity: 2,
-    user_id: 2,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1560331470-4737e8408873?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"
     ]
@@ -92,7 +94,7 @@ backyards = [
     price: 80,
     description: "Very large backyard perfect for a party, or group of people who want a nice outdoor setting.",
     max_capacity: 8,
-    user_id: 3,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1575221052072-6a4f4d7b8d8e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
     ]
@@ -103,7 +105,7 @@ backyards = [
     price: 45,
     description: "Small garden but quite quaint and nice. Would be perfect for a couple.",
     max_capacity: 2,
-    user_id: 4,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1563341591-ad0a750911cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
     ]
@@ -114,7 +116,7 @@ backyards = [
     price: 120,
     description: "Very nice garden. Lot's of flowers and roses, perfect for any person looking for a nice afternoon in a private place",
     max_capacity: 110,
-    user_id: 5,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1578302758063-0ef3e048ca89?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80"
     ]
@@ -125,7 +127,7 @@ backyards = [
     price: 40,
     description: "Grab a garden for a sunday barbecue! You won't regret and are sure to enjoy it!",
     max_capacity: 8,
-    user_id: 1,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1595436301907-0b361827c9f8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
     ]
@@ -136,7 +138,7 @@ backyards = [
     price: 80,
     description: "Very large garden perfect for a large gathering or party! I hope people can enjoy it.",
     max_capacity: 15,
-    user_id: 2,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1598901796257-7409fcf280f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
     ]
@@ -147,7 +149,7 @@ backyards = [
     price: 20,
     description: "Looking for some extra cash so renting out my garden in london. Really nice picnic spot.",
     max_capacity: 2,
-    user_id: 3,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1601146590329-66f6867dd22e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
     ]
@@ -158,7 +160,7 @@ backyards = [
     price: 60,
     description: "Renting out our quaint London garden with a Coi Pond. Very peaceful and perfect for an artist or someone looking for peace and quiet.",
     max_capacity: 2,
-    user_id: 4,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1511127433666-6a603b890eed?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80",
       "https://images.unsplash.com/photo-1585773580816-6db5189a1c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
@@ -170,7 +172,7 @@ backyards = [
     price: 90,
     description: "Renting out my parents garden in London because they don't use it. Very nice and perfect for a gathering.",
     max_capacity: 10,
-    user_id: 5,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1611338902321-511fd14889f3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
     ]
@@ -181,7 +183,7 @@ backyards = [
     price: 20,
     description: "Small backyard with a grill. Hope you can make more use of it that I do.",
     max_capacity: 4,
-    user_id: 3,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1594498653385-d5172c532c00?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80"
     ]
@@ -192,7 +194,7 @@ backyards = [
     price: 120,
     description: "My aunt's large house garden in central London. Small water lily pond and very peaceful.",
     max_capacity: 4,
-    user_id: 5,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1530082837868-fe950f0f3d85?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
       "https://images.unsplash.com/photo-1606481897791-d908424cc9d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80",
@@ -205,7 +207,7 @@ backyards = [
     price: 300,
     description: "Very large area perfect for a party or anything you might desire. We live here but would love you to make more use of it.",
     max_capacity: 25,
-    user_id: 4,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1560749003-f4b1e17e2dff?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80"
     ]
@@ -216,7 +218,7 @@ backyards = [
     price: 88,
     description: "Looking for an afternoon getaway. Sick of being stuck inside. Come and hang out in our garden. Barbecue and picnic table provided.",
     max_capacity: 8,
-    user_id: 1,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1605346298331-321e06b92313?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=885&q=80"
     ]
@@ -227,7 +229,7 @@ backyards = [
     price: 25,
     description: "Small backyard. Not amazing but still nice for an afternoon or to hang out with friends in a private setting.",
     max_capacity: 6,
-    user_id: 2,
+    user: User.all.sample,
     photos: [
       "https://images.unsplash.com/photo-1598902108854-10e335adac99?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
     ]
@@ -242,7 +244,7 @@ backyards.each_with_index do |backyard, index|
     price: backyard[:price],
     description: backyard[:description],
     max_capacity: backyard[:max_capacity],
-    user_id: backyard[:user_id]
+    user: backyard[:user]
   )
   backyard[:photos].each_with_index do |photo, j| 
     opened_photo = open_file(photo)
@@ -259,6 +261,6 @@ puts "creating bookings"
     date: Date.today + rand(1..100),
     number_of_guests: rand(10..30),
     user_id: User.all.ids.sample,
-    backyard_id: Backyard.all.ids.sample
-    )
+    backyard: Backyard.all.sample
+  )
 end

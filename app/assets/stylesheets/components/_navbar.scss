@@ -5,11 +5,13 @@
   background: transparent;
   z-index: 10;
   transition: background 0.6s ease;
-  padding: 20px;
-  font-size: 1.2rem;
+  padding: 15px;
+  font-size: 1.4rem;
+  height: 70px;
 
   .nav-link{
     color: $bright-green !important;
+    margin-right: 10px !important;
   }
 }
 
