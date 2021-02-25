@@ -3,6 +3,11 @@ class BackyardsController < ApplicationController
 
   def index
     @backyards = Backyard.all
+    
+    if params[:query] && params[:query].length > 0
+      @backyards = Backyard.search(params[:query])
+    end
+    
     @markers = @backyards.geocoded.map do |backyard|
       {
         lat: backyard.latitude,
