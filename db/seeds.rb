@@ -256,11 +256,17 @@ end
 puts "cleaning database"
 puts "creating bookings"
 
-10.times do
-  Booking.create!(
-    date: Date.today + rand(1..100),
-    number_of_guests: rand(10..30),
-    user_id: User.all.ids.sample,
-    backyard: Backyard.all.sample
-  )
+
+15.times do
+  user = User.all.sample
+  backyard = Backyard.all.sample
+  unless user == backyard.user
+    Booking.create!(
+      date: Date.today + rand(1..100),
+      number_of_guests: rand(10..30),
+      user: user,
+      backyard: backyard
+    )
+  end
 end
+
