@@ -49,6 +49,10 @@
                 <div class = "confirmed">
                   <span>Confirmed</span>
                 </div>
+              <% elsif booking.confirmed == false %>
+                <div class = "declined">
+                  <span>Declined</span>
+                </div>
               <% else %>
                 <div class = "pending">
                   <span>Pending</span>
