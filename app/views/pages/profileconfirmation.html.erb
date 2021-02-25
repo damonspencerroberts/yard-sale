@@ -38,6 +38,10 @@
             <p>Email: <%= booking.user.email %></p>
             <p class ="text-info"><%= booking.backyard.name %></p>
           </div>
+          <div class="d-flex flex-column p-3">
+            <%= link_to "Accept", backyard_booking_path(booking.backyard, booking, booking: { confirmed: true } ), method: "put", class: "btn btn-success m-2" %>
+            <%= link_to "Decline", backyard_booking_path(booking.backyard, booking, booking: { confirmed: false } ), method: "put", class: "btn btn-danger m-2" %>
+          </div>
         </div>
       <% end %>
     <% end %>

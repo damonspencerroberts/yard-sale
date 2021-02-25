@@ -18,6 +18,6 @@ class PagesController < ApplicationController
 
   def profileconfirmation
     @backyards = Backyard.where('user_id = ?', current_user.id)
-    @pending_bookings = @backyards.map { |yard| Booking.where('backyard_id = ?', yard.id) }.flatten
-  end 
+    @pending_bookings = @backyards.map { |y| Booking.where('backyard_id = ?', y.id).where(confirmed: false) }.flatten
+  end
 end
