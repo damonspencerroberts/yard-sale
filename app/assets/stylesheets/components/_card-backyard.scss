@@ -6,11 +6,11 @@
   box-shadow: 0 0 15px $pale-green-shaddow;
   border-radius: 15px;
   color: $brown;
-  transition: transform 0.4s;
+  transition: transform 0.8s;
 }
 
 .card-backyard:hover {
-  transform: scale(1.03);
+  transform: scale(1.01);
   opacity: 0.8;
 }
 
