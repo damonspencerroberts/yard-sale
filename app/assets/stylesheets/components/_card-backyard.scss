@@ -42,11 +42,14 @@
   text-decoration: none;
 }
 
+.show-container {
+  padding-top: 100px;
+}
+
 .backyard-description {
   width: 100%;
   padding: 25px;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   font-size: 20px;
   // margin: 8px;
   // display: flex;
@@ -58,12 +61,6 @@
   // bottom: 0;
   // left: 0;  
 }
-
-.garden-description {
-  margin-top: 30px;
-}
-
-
 
 .card-backyard p {
   font-size: 12px;
