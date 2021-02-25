@@ -22,4 +22,8 @@ class PagesController < ApplicationController
     @backyards = Backyard.where('user_id = ?', current_user.id)
     @pending_bookings = @backyards.map { |y| Booking.where('backyard_id = ?', y.id).where(confirmed: nil) }.flatten
   end
+
+  def profilereviews
+    @reviews = Review.where(user_id: current_user)
+  end
 end
