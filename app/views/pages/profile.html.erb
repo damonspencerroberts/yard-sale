@@ -6,10 +6,16 @@
         <%= link_to "Profile", user_profile_path, class: "tab-underlined active" %>
       </li>
       <li>
-        <%= link_to "Bookings", user_profile_bookings_path, class: "tab-underlined" %>
+        <%= link_to "My bookings", user_profile_bookings_path, class: "tab-underlined" %>
       </li>
       <li>
-        <%= link_to "Backyards", user_profile_backyards_path, class: "tab-underlined" %>
+        <%= link_to "Listed backyards", user_profile_backyards_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Booking Confirmations", user_profile_confirmation_path, class: "tab-underlined" %>
+      </li>
+      <li>
+        <%= link_to "Posted Reviews", user_profile_reviews_path, class: "tab-underlined" %>
       </li>
     </ul>
   </div>

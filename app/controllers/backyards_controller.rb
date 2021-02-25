@@ -20,6 +20,7 @@ class BackyardsController < ApplicationController
     @review = Review.new
     @reviews = Review.where("backyard_id = ?", params[:id])
     @backyard = Backyard.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
