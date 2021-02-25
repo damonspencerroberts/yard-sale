@@ -33,7 +33,7 @@ class BackyardsController < ApplicationController
     @backyard = Backyard.new(backyard_params)
     @backyard.user_id = current_user.id
     if @backyard.save
-      redirect_to backyard_path(@backyard)
+      redirect_to user_profile_backyards_path
     else
       render :new
     end
