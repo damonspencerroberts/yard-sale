@@ -20,4 +20,19 @@
     </div>   
   </div>
 </div>
-  
+
+<% @reviews.each do |review| %>
+  <%= review.content %>
+  <%= review.rating %>
+<% end  %>
+
+  <div class="row justify-content-center my-2 p-3">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h2>Add review</h2>
+      <%= simple_form_for [@backyard, @review] do |f| %>
+        <%= f.input :content %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
