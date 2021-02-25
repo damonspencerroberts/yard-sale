@@ -1,6 +1,9 @@
 <h1 class="text-center mt-5">Available Backyards</h1>
 <div class="content">
   <div class="cards">
+	<% if @backyards.empty? %>
+	<p class=col-12>There are no backyards to display</p>
+	<%else%>
     <% @backyards.each do |backyard| %>
 		<%= link_to backyard_path(backyard) do%>
 			<div class="card-backyard">
@@ -12,6 +15,7 @@
 					<p><i class="fas fa-pound-sign"></i> <%= backyard.price%> - <%= backyard.max_capacity%></p>
 				</div>
 			</div>
+				<% end %>
 		<% end %>
 	<% end %>
   </div>

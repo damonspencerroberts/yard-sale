@@ -1,0 +1,10 @@
+.searchbar{
+  display: flex;
+  justify-content: space-between;
+  .field{
+    background-color: $body-bg;
+    border-radius: 15px;
+    padding-right: 25px;
+    margin-right: 5px;
+  }
+}
