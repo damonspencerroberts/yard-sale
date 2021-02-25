@@ -21,6 +21,13 @@
   border: white 1px solid;
 }
 
+.avatar-small {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .avatar-nav {
   cursor: pointer;
 }
