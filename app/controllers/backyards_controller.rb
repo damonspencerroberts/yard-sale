@@ -2,7 +2,7 @@ class BackyardsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @backyards = Backyard.all
+    @backyards = Backyard.all.order("created_at DESC")
     
     if params[:query] && params[:query].length > 0
       @backyards = Backyard.search(params[:query])
