@@ -1,8 +1,8 @@
       <div class="navbar-expand-sm navbar-light navbar-lewagon fixed-top">
           <%= link_to root_path, class: "navbar-brand" do %>
-              <%= image_tag "https://banner2.cleanpng.com/20180602/wfj/kisspng-gardening-logo-landscaping-landscape-green-5b12f26304aaf0.4171631015279683550191.jpg" %>
+              <div class="rounded-logo"  style="color: #70bb6c"><i class="fas fa-leaf "></i></div>
           <%end%>
-          <div>          
+          <div class="centered-bar">          
               <%= form_tag(backyards_path, method: :get, class:"searchbar") do%>
                     <%= text_field_tag :query,
                       params[:query],
