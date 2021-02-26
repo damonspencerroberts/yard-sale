@@ -27,4 +27,9 @@ class PagesController < ApplicationController
   def profilereviews
     @reviews = Review.where(user_id: current_user)
   end
+
+  def profilefavourites
+    @favourites = Favourite.where(user: current_user)
+    @backyards = @favourites.map { |f| Backyard.where(id: f.backyard_id) }.flatten
+  end
 end

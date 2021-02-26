@@ -3,6 +3,7 @@ class Backyard < ApplicationRecord
   has_many_attached :photos
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :favourites, dependent: :destroy
   validates :name, :address, :price, :description, :max_capacity, presence: true
   validates :photos, presence: true
   validates :address, uniqueness: true
