@@ -42,6 +42,7 @@
   text-decoration: none;
 }
 
+
 .show-container {
   padding-top: 100px;
 }
@@ -111,14 +112,38 @@
 
 .card-backyard-favourite {
   position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.card-baryard-reviews {
+  position: absolute;
   bottom: 5px;
   left: 5px;
 }
 
+.heart-icon-white {
+  color: $pale-green
+}
+
 .heart-icon-red {
-  color: $lighter-red;
+  color: $light-red;
 }
 
 .backyard-description .save-later i:hover {
   text-decoration: none !important;
+}
+
+.review-rating-stars {
+  flex-grow: 1;
+}
+
+.show-container .backyard-description .favourite-link:hover {
+  text-decoration: none;
+}
+
+.favourite-button-is {
+  position: absolute;
+  top: -15px;
+  right: -20px;
 }
