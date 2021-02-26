@@ -61,7 +61,7 @@ end
 
 # backyards
 puts "Cleaning database..."
-
+puts "Adding backyards..."
 
 
 
@@ -260,6 +260,7 @@ puts "creating bookings"
 15.times do
   user = User.all.sample
   backyard = Backyard.all.sample
+  puts "Added Booking..."
   unless user == backyard.user
     Booking.create!(
       date: Date.today + rand(1..100),
@@ -270,3 +271,16 @@ puts "creating bookings"
   end
 end
 
+40.times do
+  user = User.all.sample
+  backyard = Backyard.all.sample
+  puts "Added Review..."
+  unless user == backyard.user || user.reviews.map { |rev| rev.backyard }.include?(backyard)
+    Review.create!(
+      content: Faker::Lorem.sentence,
+      rating: rand(1..5),
+      user: user,
+      backyard: backyard
+    )
+  end
+end
