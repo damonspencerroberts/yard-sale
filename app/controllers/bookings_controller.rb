@@ -37,7 +37,8 @@ class BookingsController < ApplicationController
 	def update
 		@booking = Booking.find(params[:id])
 		if @booking.update(booking_params)
-			redirect_to user_profile_bookings_path
+			flash.now[:notice] = "Successfully updated."
+			redirect_to request.referrer
 		else
 			render :new
 		end
