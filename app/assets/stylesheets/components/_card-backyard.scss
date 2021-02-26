@@ -6,13 +6,8 @@
   box-shadow: 0 0 15px $pale-green-shaddow;
   border-radius: 15px;
   color: $brown;
-  transition: transform 0.4s;
 }
 
-.card-backyard:hover {
-  transform: scale(1.03);
-  opacity: 0.8;
-}
 
 .card-backyard>img {
   height: 200px;
@@ -107,4 +102,18 @@
   bottom: 5px;
   right: 5px;
   font-size: 1.2rem;
+}
+
+.card-backyard-favourite {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+.heart-icon-red {
+  color: $lighter-red;
+}
+
+.backyard-description .save-later i:hover {
+  text-decoration: none !important;
 }

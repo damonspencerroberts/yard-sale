@@ -17,6 +17,9 @@
       <li>
         <%= link_to "Posted reviews", user_profile_reviews_path, class: "tab-underlined" %>
       </li>
+      <li>
+        <%= link_to "Favourites", user_profile_favourites_path, class: "tab-underlined" %>
+      </li>
     </ul>
   </div>
   <div>
@@ -41,7 +44,6 @@
             <%= cl_image_tag @backyards[index].photos.first.key %>
             <div class="card-product-infos">
               <h2><%= @backyards[index].name %></h2>
-              <p><%= @backyards[index].description %></p>
               <div class="d-flex flex-column py-2">
                 <%= link_to "Edit Booking", edit_backyard_booking_path(@backyards[index], booking), class: "text-warning" %>
                 <%= link_to "Delete Booking", backyard_booking_path(@backyards[index], booking), method: :delete, data: { confirm: 'Are you sure?'}, class: "text-danger" %>

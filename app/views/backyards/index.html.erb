@@ -7,22 +7,35 @@
 			<%= link_to "back", backyards_path  %>
 		<%else%>
 			<% @backyards.each do |backyard| %>
-			<%= link_to backyard_path(backyard) do%>
-				<div class="card-backyard">
-					<%= cl_image_tag backyard.photos.first.key, height: 600, width: 600, crop: :fill %>
+				<%= link_to backyard_path(backyard) do%>
+					<div class="card-backyard">
+						<%= cl_image_tag backyard.photos.first.key, height: 600, width: 600, crop: :fill %>
 						<h2><%=backyard.name%></h2>
-					<div class="card-backyard-infos">
-						<div class="card-backyard-icons">
-							<div class="m-2">
-								<i class="fas fa-pound-sign"></i> <%= backyard.price%>
-							</div>
-							<div class="m-2">
-								<i class="fas fa-user-friends"></i> <%= backyard.max_capacity%>
+						<div class="card-backyard-infos">
+							<div class="card-backyard-icons">
+								<div class="m-2">
+									<i class="fas fa-pound-sign"></i> <%= backyard.price%>
+								</div>
+								<div class="m-2">
+									<i class="fas fa-user-friends"></i> <%= backyard.max_capacity%>
+								</div>
 							</div>
 						</div>
+						<div class="card-backyard-favourite">
+							<% if !current_user.nil? %>
+								<% if current_user.favourites.where(backyard: backyard).empty? %>
+									<div class="text-info m-2">
+										<i class="fas fa-heart heart-icon"></i>
+									</div>
+								<% else %>
+									<div class="text-info m-2">
+										<i class="fas fa-heart heart-icon-red"></i>
+									</div>
+								<% end %>
+							<% end %>
+						</div>
 					</div>
-				</div>
-					<% end %>
+				<% end %>
 			<% end %>
 		<% end %>
 		</div>

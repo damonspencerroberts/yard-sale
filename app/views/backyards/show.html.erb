@@ -2,16 +2,31 @@
   <div class="row">
     <div class="col-sm-8">
       <% @backyard.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 400, width: 700, crop: :fill, class:"show-image" %>
+      <%= cl_image_tag photo.key, height: 400, width: 700, crop: :fill, class:"show-image my-2" %>
       <% end %>
-      <h3><%= @backyard.name %></h3>
-      <p><%= @backyard.description %></p>
+      <div class="py-3">
+        <h3><%= @backyard.name %></h3>
+        <p><%= @backyard.description %></p>
+      </div>
     </div>
     <div class="col-sm-4 backyard-description h-100 border rounded shadow-sm">
       <div>
         <p class="align-bottom">Address: <%= @backyard.address %></p>
         <p>Price: <strong>£<%=@backyard.price %></strong></p>
         <p>Max Capacity: <strong><%= @backyard.max_capacity %></strong></p>
+        <% if !current_user.nil? %>
+          <% if current_user != @backyard.user %>
+            <% if current_user.favourites.where(backyard: @backyard).empty?  %>
+              <%= link_to backyard_favourites_path(@backyard), method: "post" do %>
+                <p class="text-success save-later">Save for later <i class="fas fa-heart heart-icon"></i></p>
+              <% end %>
+            <% else %>
+              <%= link_to backyard_favourite_path(@backyard, current_user.favourites.where(backyard: @backyard).first), method: :delete, data: { confirm: "Are you sure?"}, class: "text-danger" do %>
+                <p class="text-danger save-later">Remove Favourite <i class="fas fa-times"></i></p>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
       <% if current_user != @backyard.user %>
       <div>
