@@ -14,9 +14,9 @@
   <body>
     <div>
       <%= render partial: 'partials/navbar'%>
-      <%= yield %>
+      <div style="min-height: 90vh"><%= yield %></div>
       <%= render partial: 'partials/footer' %>
       <%= render 'shared/flashes' %>
-    <div>
+    <div> 
   </body>
 </html>
