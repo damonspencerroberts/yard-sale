@@ -6,6 +6,11 @@
   box-shadow: 0 0 15px $pale-green-shaddow;
   border-radius: 15px;
   color: $brown;
+  transition: 0.4s;
+  &:hover { 
+  transform: scale(1.04);
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  }
 }
 
 

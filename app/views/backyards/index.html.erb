@@ -1,11 +1,14 @@
 <div class="page-container">
 	<h1 class="text-center">Available Backyards</h1>
 	<div class="content">
-		<div class="cards">
 		<% if @backyards.empty? %>
-			<p class="col-12 text-danger">There are no backyards to display</p>
-			<%= link_to "back", backyards_path  %>
+			<div class="text-center mx-auto" style="width: 100%;">
+				<p class="text-danger">There are no backyards to display</p>
+				<iframe src="https://giphy.com/embed/Yl5aO3gdVfsQ0" width="480" height="275" frameBorder="0" class="giphy-embed" ></iframe>
+				<%= link_to "back", backyards_path, class: "button"%>
+			</div>
 		<%else%>
+			<div class="cards">
 			<% @backyards.each do |backyard| %>
 				<%= link_to backyard_path(backyard) do%>
 					<div class="card-backyard">
@@ -40,10 +43,12 @@
 		<% end %>
 		</div>
 	<!--rendering the map-->
+		<% if @backyards.empty? == false %>
 			<div id="map"
 				style="width: 100%; height: 100vh;"
 				data-markers="<%= @markers.to_json %>"
 				data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 			</div>
+		<% end %>
 	</div>
 </div>
