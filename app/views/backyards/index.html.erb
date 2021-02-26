@@ -1,11 +1,13 @@
 <div class="page-container">
 	<h1 class="text-center">Available Backyards</h1>
-	<div class="content">
+	<div class="content" style="margin-top: 60px;">
 		<% if @backyards.empty? %>
-			<div class="text-center mx-auto" style="width: 100%;">
+			<div class="text-center" style="width: 100%;">
 				<p class="text-danger">There are no backyards to display</p>
-				<iframe src="https://giphy.com/embed/Yl5aO3gdVfsQ0" width="480" height="275" frameBorder="0" class="giphy-embed" ></iframe>
-				<%= link_to "back", backyards_path, class: "button"%>
+				<iframe src="https://giphy.com/embed/Yl5aO3gdVfsQ0" height="275" width="600" frameBorder="0" class="giphy-embed mb-4" ></iframe>
+			<div>
+				<%= link_to "back", backyards_path, class: "btn btn-success px-3"%>
+			</div>
 			</div>
 		<%else%>
 			<div class="cards">
