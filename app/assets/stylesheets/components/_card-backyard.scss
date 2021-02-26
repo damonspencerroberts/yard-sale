@@ -118,7 +118,7 @@
 }
 
 .heart-icon-white {
-  color: white;
+  color: $pale-green
 }
 
 .heart-icon-red {
@@ -131,4 +131,14 @@
 
 .review-rating-stars {
   flex-grow: 1;
+}
+
+.show-container .backyard-description .favourite-link:hover {
+  text-decoration: none;
+}
+
+.favourite-button-is {
+  position: absolute;
+  top: -15px;
+  right: -20px;
 }

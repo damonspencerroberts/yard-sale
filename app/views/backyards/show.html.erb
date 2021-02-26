@@ -16,15 +16,17 @@
         <p>Max Capacity: <strong><%= @backyard.max_capacity %></strong></p>
         <% if !current_user.nil? %>
           <% if current_user != @backyard.user %>
-            <% if current_user.favourites.where(backyard: @backyard).empty?  %>
-              <%= link_to backyard_favourites_path(@backyard), method: "post" do %>
-                <p class="text-success save-later">Save for later <i class="fas fa-heart heart-icon"></i></p>
+            <div class="favourite-button-is">
+              <% if current_user.favourites.where(backyard: @backyard).empty?  %>
+                <%= link_to backyard_favourites_path(@backyard), class: "favourite-link", method: "post" do %>
+                  <i class="far fa-heart heart-icon-red fa-2x"></i>
+                <% end %>
+              <% else %>
+                <%= link_to backyard_favourite_path(@backyard, current_user.favourites.where(backyard: @backyard).first), method: :delete, class: "favourite-link text-danger" do %>
+                  <i class="fas fa-heart heart-icon-red fa-2x"></i></p>
+                <% end %>
               <% end %>
-            <% else %>
-              <%= link_to backyard_favourite_path(@backyard, current_user.favourites.where(backyard: @backyard).first), method: :delete, data: { confirm: "Are you sure?"}, class: "text-danger" do %>
-                <p class="text-danger save-later">Remove Favourite <i class="fas fa-times"></i></p>
-              <% end %>
-            <% end %>
+            </div>
           <% end %>
         <% end %>
       </div>

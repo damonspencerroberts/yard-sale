@@ -25,6 +25,7 @@
 							<% if !current_user.nil? %>
 								<% if current_user.favourites.where(backyard: backyard).empty? %>
 									<div class="text-info m-2">
+										<%# <a href="">h </a> %>
 										<i class="fas fa-heart heart-icon-white"></i>
 									</div>
 								<% else %>
