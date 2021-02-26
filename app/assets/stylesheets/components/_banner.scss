@@ -5,11 +5,19 @@
   color: #eee;
   text-align: center;
   padding-top: 40vh;
-  h1{
-    font-size: 6.5rem;
-  }
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+.home-title{
+  h1 {
+    font-size: 6.5rem;
+    position: relative;
+    top: -2em;
+  }
+  h3 {
+    position: relative;
+    top: -7em;
+  }
+}
 }

@@ -9,9 +9,15 @@
   position: relative;
   align-self: center;
   height: 4em;
-  width: 35em;
   background-color: $magnolia;
-  opacity: 0.6;
+  opacity: 0.85;
+  top: -10em;
+  .field{
+    width: 374px;
+  }
+  .field:focus{
+    box-shadow: none;
+  }
 }
 
 .card-backyard{
@@ -22,8 +28,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  position: relative;
   a{
     text-decoration: none;
   }
+  .card-prices{
+    position: absolute;
+    bottom: 1em;
+  }
+}
+#featured{
+      font-size: 4em;
+      padding: 59px;
 }
